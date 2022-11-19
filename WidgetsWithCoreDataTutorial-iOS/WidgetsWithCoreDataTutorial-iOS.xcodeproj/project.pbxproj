@@ -95,6 +95,7 @@
 		F8583705292793A200285070 = {
 			isa = PBXGroup;
 			children = (
+				F8245B822927CA4800F023C7 /* WidgetsExtension.entitlements */,
 				F8583710292793A300285070 /* WidgetsWithCoreDataTutorial-iOS */,
 				F8583732292793C100285070 /* Widgets */,
 				F858372D292793C100285070 /* Frameworks */,
@@ -139,7 +140,6 @@
 		F8583732292793C100285070 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				F8245B822927CA4800F023C7 /* WidgetsExtension.entitlements */,
 				F8583733292793C100285070 /* WidgetsBundle.swift */,
 				F8583735292793C100285070 /* WidgetsLiveActivity.swift */,
 				F8583737292793C100285070 /* Widgets.swift */,
