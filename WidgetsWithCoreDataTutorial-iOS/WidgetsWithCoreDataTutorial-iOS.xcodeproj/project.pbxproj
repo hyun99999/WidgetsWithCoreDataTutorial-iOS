@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8455AEA2934972200737D16 /* QRCodeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8455AE82934971900737D16 /* QRCodeWidget.swift */; };
+		F8455AEC2934973600737D16 /* MyCardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8455AEB2934973600737D16 /* MyCardWidget.swift */; };
 		F8583712292793A300285070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8583711292793A300285070 /* AppDelegate.swift */; };
 		F8583714292793A300285070 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8583713292793A300285070 /* SceneDelegate.swift */; };
 		F8583716292793A300285070 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8583715292793A300285070 /* ViewController.swift */; };
@@ -18,7 +20,6 @@
 		F8583731292793C100285070 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8583730292793C100285070 /* SwiftUI.framework */; };
 		F8583734292793C100285070 /* WidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8583733292793C100285070 /* WidgetsBundle.swift */; };
 		F8583736292793C100285070 /* WidgetsLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8583735292793C100285070 /* WidgetsLiveActivity.swift */; };
-		F8583738292793C100285070 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8583737292793C100285070 /* Widgets.swift */; };
 		F858373B292793C200285070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F858373A292793C200285070 /* Assets.xcassets */; };
 		F858373D292793C200285070 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8583739292793C100285070 /* Widgets.intentdefinition */; };
 		F858373E292793C200285070 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8583739292793C100285070 /* Widgets.intentdefinition */; };
@@ -52,6 +53,8 @@
 /* Begin PBXFileReference section */
 		F8245B812927CA3F00F023C7 /* WidgetsWithCoreDataTutorial-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WidgetsWithCoreDataTutorial-iOS.entitlements"; sourceTree = "<group>"; };
 		F8245B822927CA4800F023C7 /* WidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetsExtension.entitlements; sourceTree = "<group>"; };
+		F8455AE82934971900737D16 /* QRCodeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeWidget.swift; sourceTree = "<group>"; };
+		F8455AEB2934973600737D16 /* MyCardWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardWidget.swift; sourceTree = "<group>"; };
 		F858370E292793A300285070 /* WidgetsWithCoreDataTutorial-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WidgetsWithCoreDataTutorial-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8583711292793A300285070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8583713292793A300285070 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +69,6 @@
 		F8583730292793C100285070 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		F8583733292793C100285070 /* WidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsBundle.swift; sourceTree = "<group>"; };
 		F8583735292793C100285070 /* WidgetsLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsLiveActivity.swift; sourceTree = "<group>"; };
-		F8583737292793C100285070 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		F8583739292793C100285070 /* Widgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Widgets.intentdefinition; sourceTree = "<group>"; };
 		F858373A292793C200285070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F858373C292793C200285070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8455AED2934975200737D16 /* WidgetsBundle */ = {
+			isa = PBXGroup;
+			children = (
+				F8583733292793C100285070 /* WidgetsBundle.swift */,
+				F8455AEB2934973600737D16 /* MyCardWidget.swift */,
+				F8455AE82934971900737D16 /* QRCodeWidget.swift */,
+			);
+			path = WidgetsBundle;
+			sourceTree = "<group>";
+		};
 		F8583705292793A200285070 = {
 			isa = PBXGroup;
 			children = (
@@ -140,9 +152,8 @@
 		F8583732292793C100285070 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				F8583733292793C100285070 /* WidgetsBundle.swift */,
+				F8455AED2934975200737D16 /* WidgetsBundle */,
 				F8583735292793C100285070 /* WidgetsLiveActivity.swift */,
-				F8583737292793C100285070 /* Widgets.swift */,
 				F8583739292793C100285070 /* Widgets.intentdefinition */,
 				F858373A292793C200285070 /* Assets.xcassets */,
 				F858373C292793C200285070 /* Info.plist */,
@@ -266,8 +277,9 @@
 			files = (
 				F858373D292793C200285070 /* Widgets.intentdefinition in Sources */,
 				F8583736292793C100285070 /* WidgetsLiveActivity.swift in Sources */,
-				F8583738292793C100285070 /* Widgets.swift in Sources */,
+				F8455AEA2934972200737D16 /* QRCodeWidget.swift in Sources */,
 				F8583734292793C100285070 /* WidgetsBundle.swift in Sources */,
+				F8455AEC2934973600737D16 /* MyCardWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
