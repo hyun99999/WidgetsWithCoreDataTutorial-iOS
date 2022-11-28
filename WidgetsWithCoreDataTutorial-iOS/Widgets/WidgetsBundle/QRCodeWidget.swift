@@ -44,7 +44,9 @@ struct QRCodeEnytryView : View {
     var entry: QRCodeProvider.Entry
     
     var body: some View {
-        Text(entry.date, style: .time)
+        Image("widgetQr")
+            .resizable()
+            .scaledToFill()
     }
 }
 
