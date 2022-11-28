@@ -49,7 +49,7 @@ struct MyCardEnytryView : View {
 }
 
 struct MyCardWidget: Widget {
-    let kind: String = "Widgets"
+    let kind: String = "MyCardWidget"
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: MyCardProvider()) { entry in

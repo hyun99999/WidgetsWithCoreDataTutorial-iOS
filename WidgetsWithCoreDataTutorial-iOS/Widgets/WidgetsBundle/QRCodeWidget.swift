@@ -51,7 +51,7 @@ struct QRCodeEnytryView : View {
 }
 
 struct QRCodeWidget: Widget {
-    let kind: String = "Widgets"
+    let kind: String = "QRCodeWidget"
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: QRCodeProvider()) { entry in
