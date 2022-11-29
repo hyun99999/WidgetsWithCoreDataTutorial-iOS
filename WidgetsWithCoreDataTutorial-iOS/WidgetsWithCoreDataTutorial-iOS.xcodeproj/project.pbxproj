@@ -24,6 +24,7 @@
 		F858373D292793C200285070 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8583739292793C100285070 /* Widgets.intentdefinition */; };
 		F858373E292793C200285070 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8583739292793C100285070 /* Widgets.intentdefinition */; };
 		F8583741292793C200285070 /* WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F858372C292793C100285070 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F862D1212935E63400FB890F /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2AE0D2935D926000B0043 /* Color+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		F8583739292793C100285070 /* Widgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Widgets.intentdefinition; sourceTree = "<group>"; };
 		F858373A292793C200285070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F858373C292793C200285070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8D2AE0D2935D926000B0043 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				F8583739292793C100285070 /* Widgets.intentdefinition */,
 				F858373A292793C200285070 /* Assets.xcassets */,
 				F858373C292793C200285070 /* Info.plist */,
+				F8D2AE0D2935D926000B0043 /* Color+.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F858373D292793C200285070 /* Widgets.intentdefinition in Sources */,
+				F862D1212935E63400FB890F /* Color+.swift in Sources */,
 				F8583736292793C100285070 /* WidgetsLiveActivity.swift in Sources */,
 				F8455AEA2934972200737D16 /* QRCodeWidget.swift in Sources */,
 				F8583734292793C100285070 /* WidgetsBundle.swift in Sources */,
