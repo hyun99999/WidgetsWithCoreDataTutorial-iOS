@@ -71,6 +71,7 @@ struct MyCardEnytryView : View {
                         .font(.system(size: 15))
                         .foregroundColor(.init(white: 1.0, opacity: 0.8))
                         .padding(EdgeInsets(top: 12, leading: 10, bottom: 0, trailing: 0))
+                        .lineLimit(1)
                     Spacer()
                     Image("logoNada")
                         .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 10))
@@ -82,6 +83,7 @@ struct MyCardEnytryView : View {
                         .font(.system(size: 15))
                         .foregroundColor(.userNameColor(for: colorScheme))
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: 11, trailing: 10))
+                        .lineLimit(1)
                     
                     // ✅ 아래와 같이 삼항 연산자를 활용해서 사용할 수도 있다.
 //                        .foregroundColor(colorScheme == .light ? Color(red: 19.0 / 255.0, green: 20.0 / 255.0, blue: 22.0 / 255.0) : Color(red: 255.0 / 255.0, green: 255.0 / 255.0, blue: 255.0 / 255.0))
