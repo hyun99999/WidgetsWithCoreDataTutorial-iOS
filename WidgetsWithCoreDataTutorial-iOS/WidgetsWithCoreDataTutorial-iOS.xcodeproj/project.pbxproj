@@ -109,7 +109,6 @@
 		F8583705292793A200285070 = {
 			isa = PBXGroup;
 			children = (
-				F8245B822927CA4800F023C7 /* WidgetsExtension.entitlements */,
 				F8583710292793A300285070 /* WidgetsWithCoreDataTutorial-iOS */,
 				F8583732292793C100285070 /* Widgets */,
 				F858372D292793C100285070 /* Frameworks */,
@@ -129,14 +128,9 @@
 		F8583710292793A300285070 /* WidgetsWithCoreDataTutorial-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F8EA51DE2939B9360015AB8D /* Source */,
+				F8EA51DD2939B91D0015AB8D /* Resource */,
 				F8245B812927CA3F00F023C7 /* WidgetsWithCoreDataTutorial-iOS.entitlements */,
-				F8583711292793A300285070 /* AppDelegate.swift */,
-				F8583713292793A300285070 /* SceneDelegate.swift */,
-				F8583715292793A300285070 /* ViewController.swift */,
-				F8583717292793A300285070 /* Main.storyboard */,
-				F858371D292793A300285070 /* Assets.xcassets */,
-				F858371F292793A300285070 /* LaunchScreen.storyboard */,
-				F8583722292793A300285070 /* Info.plist */,
 				F858371A292793A300285070 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld */,
 			);
 			path = "WidgetsWithCoreDataTutorial-iOS";
@@ -154,14 +148,44 @@
 		F8583732292793C100285070 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				F8EA51DF2939B9D80015AB8D /* Resource */,
 				F8455AED2934975200737D16 /* WidgetsBundle */,
 				F8583735292793C100285070 /* WidgetsLiveActivity.swift */,
 				F8583739292793C100285070 /* Widgets.intentdefinition */,
-				F858373A292793C200285070 /* Assets.xcassets */,
-				F858373C292793C200285070 /* Info.plist */,
-				F8D2AE0D2935D926000B0043 /* Color+.swift */,
+				F8245B822927CA4800F023C7 /* WidgetsExtension.entitlements */,
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		F8EA51DD2939B91D0015AB8D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F8583717292793A300285070 /* Main.storyboard */,
+				F858371F292793A300285070 /* LaunchScreen.storyboard */,
+				F8583722292793A300285070 /* Info.plist */,
+				F858371D292793A300285070 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F8EA51DE2939B9360015AB8D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F8583711292793A300285070 /* AppDelegate.swift */,
+				F8583713292793A300285070 /* SceneDelegate.swift */,
+				F8583715292793A300285070 /* ViewController.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F8EA51DF2939B9D80015AB8D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F8D2AE0D2935D926000B0043 /* Color+.swift */,
+				F858373C292793C200285070 /* Info.plist */,
+				F858373A292793C200285070 /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,7 +466,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T8C9SSEX5G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "WidgetsWithCoreDataTutorial-iOS/Info.plist";
+				INFOPLIST_FILE = "WidgetsWithCoreDataTutorial-iOS/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -472,7 +496,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T8C9SSEX5G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "WidgetsWithCoreDataTutorial-iOS/Info.plist";
+				INFOPLIST_FILE = "WidgetsWithCoreDataTutorial-iOS/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -496,12 +520,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Widgets/WidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T8C9SSEX5G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Widgets/Info.plist;
+				INFOPLIST_FILE = Widgets/Resource/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -524,12 +548,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Widgets/WidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T8C9SSEX5G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Widgets/Info.plist;
+				INFOPLIST_FILE = Widgets/Resource/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
