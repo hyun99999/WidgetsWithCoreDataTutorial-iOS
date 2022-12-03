@@ -21,8 +21,6 @@
 		F8583734292793C100285070 /* WidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8583733292793C100285070 /* WidgetsBundle.swift */; };
 		F8583736292793C100285070 /* WidgetsLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8583735292793C100285070 /* WidgetsLiveActivity.swift */; };
 		F858373B292793C200285070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F858373A292793C200285070 /* Assets.xcassets */; };
-		F858373D292793C200285070 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8583739292793C100285070 /* Widgets.intentdefinition */; };
-		F858373E292793C200285070 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8583739292793C100285070 /* Widgets.intentdefinition */; };
 		F8583741292793C200285070 /* WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F858372C292793C100285070 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F862D1212935E63400FB890F /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2AE0D2935D926000B0043 /* Color+.swift */; };
 		F8EA51DC2939B9060015AB8D /* SelectMyCardIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8EA51DB2939B9060015AB8D /* SelectMyCardIntents.intentdefinition */; };
@@ -100,7 +98,6 @@
 		F8583730292793C100285070 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		F8583733292793C100285070 /* WidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsBundle.swift; sourceTree = "<group>"; };
 		F8583735292793C100285070 /* WidgetsLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsLiveActivity.swift; sourceTree = "<group>"; };
-		F8583739292793C100285070 /* Widgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Widgets.intentdefinition; sourceTree = "<group>"; };
 		F858373A292793C200285070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F858373C292793C200285070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8D2AE0D2935D926000B0043 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
@@ -215,7 +212,6 @@
 				F8EA51DF2939B9D80015AB8D /* Resource */,
 				F8455AED2934975200737D16 /* WidgetsBundle */,
 				F8583735292793C100285070 /* WidgetsLiveActivity.swift */,
-				F8583739292793C100285070 /* Widgets.intentdefinition */,
 				F8245B822927CA4800F023C7 /* WidgetsExtension.entitlements */,
 			);
 			path = Widgets;
@@ -434,7 +430,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8EA52072939E4420015AB8D /* SelectMyCardIntents.intentdefinition in Sources */,
-				F858373E292793C200285070 /* Widgets.intentdefinition in Sources */,
 				F8EA5239293A309F0015AB8D /* MyCardDetail.swift in Sources */,
 				F858371C292793A300285070 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld in Sources */,
 				F8583716292793A300285070 /* ViewController.swift in Sources */,
@@ -447,7 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F858373D292793C200285070 /* Widgets.intentdefinition in Sources */,
 				F862D1212935E63400FB890F /* Color+.swift in Sources */,
 				F8583736292793C100285070 /* WidgetsLiveActivity.swift in Sources */,
 				F8455AEA2934972200737D16 /* QRCodeWidget.swift in Sources */,

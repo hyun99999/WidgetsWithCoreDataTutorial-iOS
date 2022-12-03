@@ -7,26 +7,25 @@
 
 import WidgetKit
 import SwiftUI
-import Intents
 
-struct QRCodeProvider: IntentTimelineProvider {
+struct QRCodeProvider: TimelineProvider {
     func placeholder(in context: Context) -> QRCodeEntry {
-        QRCodeEntry(date: Date(), configuration: ConfigurationIntent())
+        QRCodeEntry(date: Date())
     }
     
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (QRCodeEntry) -> ()) {
-        let entry = QRCodeEntry(date: Date(), configuration: configuration)
+    func getSnapshot(in context: Context, completion: @escaping (QRCodeEntry) -> ()) {
+        let entry = QRCodeEntry(date: Date())
         completion(entry)
     }
     
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [QRCodeEntry] = []
         
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = QRCodeEntry(date: entryDate, configuration: configuration)
+            let entry = QRCodeEntry(date: entryDate)
             entries.append(entry)
         }
         
@@ -37,7 +36,6 @@ struct QRCodeProvider: IntentTimelineProvider {
 
 struct QRCodeEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
 }
 
 struct QRCodeEnytryView : View {
@@ -54,7 +52,8 @@ struct QRCodeWidget: Widget {
     let kind: String = "QRCodeWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: QRCodeProvider()) { entry in
+        StaticConfiguration(kind: kind,
+                            provider: QRCodeProvider()) { entry in
             QRCodeEnytryView(entry: entry)
         }
         .configurationDisplayName("QR Code 위젯")
@@ -65,7 +64,7 @@ struct QRCodeWidget: Widget {
 
 struct QRCodeWidget_Previews: PreviewProvider {
     static var previews: some View {
-        QRCodeEnytryView(entry: QRCodeEntry(date: Date(), configuration: ConfigurationIntent()))
+        QRCodeEnytryView(entry: QRCodeEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
