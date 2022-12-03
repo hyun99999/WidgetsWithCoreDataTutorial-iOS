@@ -36,7 +36,6 @@
 		F8EA52072939E4420015AB8D /* SelectMyCardIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8EA51DB2939B9060015AB8D /* SelectMyCardIntents.intentdefinition */; };
 		F8EA52082939E4430015AB8D /* SelectMyCardIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8EA51DB2939B9060015AB8D /* SelectMyCardIntents.intentdefinition */; };
 		F8EA52092939E4440015AB8D /* SelectMyCardIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8EA51DB2939B9060015AB8D /* SelectMyCardIntents.intentdefinition */; };
-		F8EA5235293A30870015AB8D /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5234293A30870015AB8D /* CharacterDetail.swift */; };
 		F8EA5239293A309F0015AB8D /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
 		F8EA523C293A31DA0015AB8D /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
 		F8EA523D293A31DA0015AB8D /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
@@ -115,7 +114,6 @@
 		F8EA51F52939E1620015AB8D /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
 		F8EA51F82939E1620015AB8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		F8EA51FA2939E1620015AB8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8EA5234293A30870015AB8D /* CharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
 		F8EA5238293A309F0015AB8D /* MyCardDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -240,7 +238,6 @@
 				F8583711292793A300285070 /* AppDelegate.swift */,
 				F8583713292793A300285070 /* SceneDelegate.swift */,
 				F8583715292793A300285070 /* ViewController.swift */,
-				F8EA5234293A30870015AB8D /* CharacterDetail.swift */,
 				F8EA5238293A309F0015AB8D /* MyCardDetail.swift */,
 			);
 			path = Source;
@@ -436,7 +433,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8EA5235293A30870015AB8D /* CharacterDetail.swift in Sources */,
 				F8EA52072939E4420015AB8D /* SelectMyCardIntents.intentdefinition in Sources */,
 				F858373E292793C200285070 /* Widgets.intentdefinition in Sources */,
 				F8EA5239293A309F0015AB8D /* MyCardDetail.swift in Sources */,
