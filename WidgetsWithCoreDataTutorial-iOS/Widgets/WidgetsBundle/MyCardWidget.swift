@@ -11,15 +11,15 @@ import Intents
 
 struct MyCardProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> MyCardEntry {
-        MyCardEntry(date: Date(), configuration: ConfigurationIntent())
+        MyCardEntry(date: Date(), configuration: SelectMyCardIntent())
     }
     
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (MyCardEntry) -> ()) {
+    func getSnapshot(for configuration: SelectMyCardIntent, in context: Context, completion: @escaping (MyCardEntry) -> ()) {
         let entry = MyCardEntry(date: Date(), configuration: configuration)
         completion(entry)
     }
     
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: SelectMyCardIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [MyCardEntry] = []
         
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
@@ -38,10 +38,7 @@ struct MyCardProvider: IntentTimelineProvider {
 struct MyCardEntry: TimelineEntry {
     let date: Date
     // TODO: - CoreData 를 사용해서 container app 과 데이터 공유.
-//    let cardName: String
-//    let userName: String
-//    let cardImage: Image
-    let configuration: ConfigurationIntent
+    let configuration: SelectMyCardIntent
 }
 
 struct MyCardEnytryView : View {
@@ -49,6 +46,7 @@ struct MyCardEnytryView : View {
     @Environment(\.colorScheme) var colorScheme
     
     // TODO: - MyCardEntry 에 있는 변수를 사용해서 동적으로 컨텐츠 대응.
+    // TODO: - 초기 상태는 아무런 선택 목록을 선택하지 않으므로(nil), 첫 번째 목록을 할당.
     
     var body: some View {
         ZStack {
@@ -67,7 +65,7 @@ struct MyCardEnytryView : View {
             }
             VStack {
                 HStack {
-                    Text("cardName")
+                    Text(entry.configuration.MyCard?.cardName ?? "✅")
                         .font(.system(size: 15))
                         .foregroundColor(.init(white: 1.0, opacity: 0.8))
                         .padding(EdgeInsets(top: 12, leading: 10, bottom: 0, trailing: 0))
@@ -97,7 +95,9 @@ struct MyCardWidget: Widget {
     let kind: String = "MyCardWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: MyCardProvider()) { entry in
+        IntentConfiguration(kind: kind,
+                            intent: SelectMyCardIntent.self,
+                            provider: MyCardProvider()) { entry in
             MyCardEnytryView(entry: entry)
         }
         .configurationDisplayName("명함 위젯")
@@ -108,7 +108,7 @@ struct MyCardWidget: Widget {
 
 struct MyCardWidget_Previews: PreviewProvider {
     static var previews: some View {
-        MyCardEnytryView(entry: MyCardEntry(date: Date(), configuration: ConfigurationIntent()))
+        MyCardEnytryView(entry: MyCardEntry(date: Date(), configuration: SelectMyCardIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
