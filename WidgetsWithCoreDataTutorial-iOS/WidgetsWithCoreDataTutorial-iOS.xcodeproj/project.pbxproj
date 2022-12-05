@@ -37,6 +37,7 @@
 		F8EA5239293A309F0015AB8D /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
 		F8EA523C293A31DA0015AB8D /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
 		F8EA523D293A31DA0015AB8D /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
+		F8EA526B293C781F0015AB8D /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA526A293C781F0015AB8D /* NextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		F8EA51F82939E1620015AB8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		F8EA51FA2939E1620015AB8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8EA5238293A309F0015AB8D /* MyCardDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardDetail.swift; sourceTree = "<group>"; };
+		F8EA526A293C781F0015AB8D /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,14 @@
 				F8EA51FA2939E1620015AB8D /* Info.plist */,
 			);
 			path = IntentsExtensionUI;
+			sourceTree = "<group>";
+		};
+		F8EA526C293C7FB30015AB8D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F8EA526A293C781F0015AB8D /* NextViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8EA52072939E4420015AB8D /* SelectMyCardIntents.intentdefinition in Sources */,
+				F8EA526B293C781F0015AB8D /* NextViewController.swift in Sources */,
 				F8EA5239293A309F0015AB8D /* MyCardDetail.swift in Sources */,
 				F858371C292793A300285070 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld in Sources */,
 				F8583716292793A300285070 /* ViewController.swift in Sources */,
