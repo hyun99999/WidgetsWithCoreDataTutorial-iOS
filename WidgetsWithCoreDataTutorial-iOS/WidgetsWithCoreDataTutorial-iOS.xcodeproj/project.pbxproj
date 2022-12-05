@@ -235,7 +235,7 @@
 			children = (
 				F8583711292793A300285070 /* AppDelegate.swift */,
 				F8583713292793A300285070 /* SceneDelegate.swift */,
-				F8583715292793A300285070 /* ViewController.swift */,
+				F8EA526C293C7FB30015AB8D /* ViewController */,
 				F8EA5238293A309F0015AB8D /* MyCardDetail.swift */,
 			);
 			path = Source;
@@ -273,6 +273,7 @@
 		F8EA526C293C7FB30015AB8D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F8583715292793A300285070 /* ViewController.swift */,
 				F8EA526A293C781F0015AB8D /* NextViewController.swift */,
 			);
 			path = ViewController;

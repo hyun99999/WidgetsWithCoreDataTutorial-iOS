@@ -46,17 +46,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="backgorundImageView" destination="FHi-kc-24r" id="JTQ-Bg-Bj4"/>
+                        <outlet property="nameLabel" destination="y81-nu-bsu" id="O8W-hy-xmD"/>
                         <segue destination="0MV-w4-ZLI" kind="presentation" id="RT0-HC-FxJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="127.48091603053435" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="-2131" y="-68"/>
         </scene>
-        <!--View Controller-->
+        <!--Next View Controller-->
         <scene sceneID="XhS-gc-D1j">
             <objects>
-                <viewController id="0MV-w4-ZLI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NextViewController" id="0MV-w4-ZLI" customClass="NextViewController" customModule="WidgetsWithCoreDataTutorial_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sbU-ki-p8I">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
