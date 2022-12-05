@@ -60,6 +60,7 @@ struct MyCardEnytryView : View {
                         .aspectRatio(contentMode: .fill)
                     // ✅ GeometryReader 의 GeometryProxy 사용해서 높이 값에 대한 너비를 비율로 사용.
                         .frame(width: proxy.size.height * (92 / 152), height: proxy.size.height)
+                        .clipped()
                     Color.backgroundColor(for: colorScheme)
                 }
             }
