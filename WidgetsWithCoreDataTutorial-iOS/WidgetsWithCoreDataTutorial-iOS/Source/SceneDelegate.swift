@@ -11,6 +11,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        let qrcodeURL: String = "openQRCode"
+        
+        guard let url = URLContexts.first?.url,
+              let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
+        
+        if qrcodeURL == urlComponents.path {
+            guard let nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NextViewController") as? NextViewController else { return }
+            window?.rootViewController?.present(nextViewController, animated: true, completion: nil)
+        }
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

@@ -45,6 +45,7 @@ struct QRCodeEnytryView : View {
         Image("widgetQr")
             .resizable()
             .scaledToFill()
+            .widgetURL(URL(string: "openQRCode"))
     }
 }
 
