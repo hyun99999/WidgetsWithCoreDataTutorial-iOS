@@ -38,6 +38,7 @@
 		F8EA523C293A31DA0015AB8D /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
 		F8EA523D293A31DA0015AB8D /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
 		F8EA526B293C781F0015AB8D /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA526A293C781F0015AB8D /* NextViewController.swift */; };
+		F8F1C73B293DC7C100BE44D2 /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,7 +237,7 @@
 				F8583711292793A300285070 /* AppDelegate.swift */,
 				F8583713292793A300285070 /* SceneDelegate.swift */,
 				F8EA526C293C7FB30015AB8D /* ViewController */,
-				F8EA5238293A309F0015AB8D /* MyCardDetail.swift */,
+				F8F1C73C2946D45B00BE44D2 /* Model */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -277,6 +278,14 @@
 				F8EA526A293C781F0015AB8D /* NextViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F8F1C73C2946D45B00BE44D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8EA5238293A309F0015AB8D /* MyCardDetail.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,6 +467,7 @@
 				F8583736292793C100285070 /* WidgetsLiveActivity.swift in Sources */,
 				F8455AEA2934972200737D16 /* QRCodeWidget.swift in Sources */,
 				F8EA51DC2939B9060015AB8D /* SelectMyCardIntents.intentdefinition in Sources */,
+				F8F1C73B293DC7C100BE44D2 /* MyCardDetail.swift in Sources */,
 				F8583734292793C100285070 /* WidgetsBundle.swift in Sources */,
 				F8455AEC2934973600737D16 /* MyCardWidget.swift in Sources */,
 			);
