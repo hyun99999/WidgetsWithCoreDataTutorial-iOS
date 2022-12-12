@@ -22,6 +22,14 @@ class IntentHandler: INExtension, SelectMyCardIntentHandling {
         completion(collection, nil)
     }
     
+    func defaultMyCard(for intent: SelectMyCardIntent) -> Card? {
+        let defaultCard = MyCardDetail.availableMyCards[0]
+        let card = Card(identifier: defaultCard.cardName, display: defaultCard.cardName)
+        card.cardName = defaultCard.cardName
+        
+        return card
+    }
+    
     override func handler(for intent: INIntent) -> Any {
         // This is the default implementation.  If you want different objects to handle different intents,
         // you can override this and return the handler you want for that particular intent.
