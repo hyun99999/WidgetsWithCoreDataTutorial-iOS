@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
     // MARK: - Components
-    @IBOutlet weak var backgorundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var cardNameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
     // MARK: - View Life Cycle
