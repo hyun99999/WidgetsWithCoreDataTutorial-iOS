@@ -11,11 +11,12 @@ import Intents
 
 struct MyCardProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> MyCardEntry {
-        MyCardEntry(date: Date(), configuration: SelectMyCardIntent())
+        // TODO: - 어떤 유형의 컨텐츠를 제공하는지만을 나타내야지 사용자 데이터가 포함되어 있어서는 안된다.
+        MyCardEntry(date: Date(), detail: MyCardDetail.availableMyCards[0])
     }
     
     func getSnapshot(for configuration: SelectMyCardIntent, in context: Context, completion: @escaping (MyCardEntry) -> ()) {
-        let entry = MyCardEntry(date: Date(), configuration: configuration)
+        let entry = MyCardEntry(date: Date(), detail: MyCardDetail.availableMyCards[0])
         completion(entry)
     }
     
@@ -26,8 +27,15 @@ struct MyCardProvider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = MyCardEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+            
+            let cardName = configuration.MyCard?.cardName
+            
+            MyCardDetail.availableMyCards.forEach { card in
+                if cardName == card.cardName {
+                    let entry = MyCardEntry(date: entryDate, detail: card)
+                    entries.append(entry)
+                }
+            }
         }
         
         let timeline = Timeline(entries: entries, policy: .never)
@@ -38,7 +46,7 @@ struct MyCardProvider: IntentTimelineProvider {
 struct MyCardEntry: TimelineEntry {
     let date: Date
     // TODO: - CoreData 를 사용해서 container app 과 데이터 공유.
-    let configuration: SelectMyCardIntent
+    let detail: MyCardDetail
 }
 
 struct MyCardEnytryView : View {
@@ -109,7 +117,7 @@ struct MyCardWidget: Widget {
 
 struct MyCardWidget_Previews: PreviewProvider {
     static var previews: some View {
-        MyCardEnytryView(entry: MyCardEntry(date: Date(), configuration: SelectMyCardIntent()))
+        MyCardEnytryView(entry: MyCardEntry(date: Date(), detail: MyCardDetail.availableMyCards[0]))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
