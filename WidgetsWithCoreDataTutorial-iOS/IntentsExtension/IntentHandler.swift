@@ -7,11 +7,25 @@
 
 import Intents
   
-class IntentHandler: INExtension, SelectMyCardIntentHandling {
+class IntentHandler: INExtension {
+    override func handler(for intent: INIntent) -> Any {
+        // This is the default implementation.  If you want different objects to handle different intents,
+        // you can override this and return the handler you want for that particular intent.
+        
+        return self
+    }
+}
+
+extension IntentHandler: SelectMyCardIntentHandling {
     func provideMyCardOptionsCollection(for intent: SelectMyCardIntent, with completion: @escaping (INObjectCollection<Card>?, Error?) -> Void) {
-        let myCards: [Card] = MyCardDetail.availableMyCards.map { card in
-            let myCard = Card(identifier: card.cardName, display: card.cardName)
-            myCard.cardName = card.cardName
+        // ✅ CoreData 조회.
+        let cardDetail = CoreDataManager.shared.fetch(entityName: "CardDetail")
+//        let myCards: [Card] = MyCardDetail.availableMyCards.map { card in
+        let myCards: [Card] = cardDetail.map { card in
+            let cardName = card.value(forKey: "cardName") as? String ?? ""
+            let myCard = Card(identifier: cardName, display: cardName)
+            
+            myCard.cardName = cardName
             return myCard
         }
         
@@ -23,17 +37,13 @@ class IntentHandler: INExtension, SelectMyCardIntentHandling {
     }
     
     func defaultMyCard(for intent: SelectMyCardIntent) -> Card? {
-        let defaultCard = MyCardDetail.availableMyCards[0]
-        let card = Card(identifier: defaultCard.cardName, display: defaultCard.cardName)
-        card.cardName = defaultCard.cardName
+//        let defaultCard = MyCardDetail.availableMyCards[0]
+        let cardDetail = CoreDataManager.shared.fetch(entityName: "CardDetail")
+        let defaultCardName = cardDetail[0].value(forKey: "cardName") as? String ?? ""
+        
+        let card = Card(identifier: defaultCardName, display: defaultCardName)
+        card.cardName = defaultCardName
         
         return card
-    }
-    
-    override func handler(for intent: INIntent) -> Any {
-        // This is the default implementation.  If you want different objects to handle different intents,
-        // you can override this and return the handler you want for that particular intent.
-        
-        return self
     }
 }
