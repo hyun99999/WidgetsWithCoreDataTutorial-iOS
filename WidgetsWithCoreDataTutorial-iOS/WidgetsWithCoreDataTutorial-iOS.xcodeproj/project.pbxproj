@@ -39,6 +39,11 @@
 		F8EA523D293A31DA0015AB8D /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
 		F8EA526B293C781F0015AB8D /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA526A293C781F0015AB8D /* NextViewController.swift */; };
 		F8F1C73B293DC7C100BE44D2 /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
+		F8F1C73D2948992300BE44D2 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F858371A292793A300285070 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld */; };
+		F8F1C73F2948993A00BE44D2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F1C73E2948993A00BE44D2 /* CoreDataManager.swift */; };
+		F8F1C7402948995B00BE44D2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F1C73E2948993A00BE44D2 /* CoreDataManager.swift */; };
+		F8F1C7412948B2F600BE44D2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F1C73E2948993A00BE44D2 /* CoreDataManager.swift */; };
+		F8F1C7422948B2F600BE44D2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F1C73E2948993A00BE44D2 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +120,7 @@
 		F8EA51FA2939E1620015AB8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8EA5238293A309F0015AB8D /* MyCardDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardDetail.swift; sourceTree = "<group>"; };
 		F8EA526A293C781F0015AB8D /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		F8F1C73E2948993A00BE44D2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +289,7 @@
 		F8F1C73C2946D45B00BE44D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F8F1C73E2948993A00BE44D2 /* CoreDataManager.swift */,
 				F8EA5238293A309F0015AB8D /* MyCardDetail.swift */,
 			);
 			path = Model;
@@ -455,6 +462,7 @@
 				F858371C292793A300285070 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld in Sources */,
 				F8583716292793A300285070 /* ViewController.swift in Sources */,
 				F8583712292793A300285070 /* AppDelegate.swift in Sources */,
+				F8F1C73F2948993A00BE44D2 /* CoreDataManager.swift in Sources */,
 				F8583714292793A300285070 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,11 +471,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F1C73D2948992300BE44D2 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld in Sources */,
 				F862D1212935E63400FB890F /* Color+.swift in Sources */,
 				F8583736292793C100285070 /* WidgetsLiveActivity.swift in Sources */,
 				F8455AEA2934972200737D16 /* QRCodeWidget.swift in Sources */,
 				F8EA51DC2939B9060015AB8D /* SelectMyCardIntents.intentdefinition in Sources */,
 				F8F1C73B293DC7C100BE44D2 /* MyCardDetail.swift in Sources */,
+				F8F1C7402948995B00BE44D2 /* CoreDataManager.swift in Sources */,
 				F8583734292793C100285070 /* WidgetsBundle.swift in Sources */,
 				F8455AEC2934973600737D16 /* MyCardWidget.swift in Sources */,
 			);
@@ -479,6 +489,7 @@
 			files = (
 				F8EA523D293A31DA0015AB8D /* MyCardDetail.swift in Sources */,
 				F8EA52082939E4430015AB8D /* SelectMyCardIntents.intentdefinition in Sources */,
+				F8F1C7412948B2F600BE44D2 /* CoreDataManager.swift in Sources */,
 				F8EA51EB2939E1620015AB8D /* IntentHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +500,7 @@
 			files = (
 				F8EA523C293A31DA0015AB8D /* MyCardDetail.swift in Sources */,
 				F8EA52092939E4440015AB8D /* SelectMyCardIntents.intentdefinition in Sources */,
+				F8F1C7422948B2F600BE44D2 /* CoreDataManager.swift in Sources */,
 				F8EA51F62939E1620015AB8D /* IntentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
