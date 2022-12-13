@@ -53,15 +53,16 @@ struct MyCardEnytryView : View {
     var entry: MyCardProvider.Entry
     @Environment(\.colorScheme) var colorScheme
     
-    // TODO: - MyCardEntry 에 있는 변수를 사용해서 동적으로 컨텐츠 대응.
-    // TODO: - 초기 상태는 아무런 선택 목록을 선택하지 않으므로(nil), 첫 번째 목록을 할당.
+    let cardDetail = CoreDataManager.shared.fetch(entityName: "CardDetail")
     
     var body: some View {
         ZStack {
             Color.white
             GeometryReader { proxy in
                 HStack(spacing: 0) {
-                    Image("imgCardWidget")
+                    let cardImage = UIImage(data: cardDetail[1].value(forKey: "cardImage") as? Data ?? Data()) ?? UIImage()
+                    Image(uiImage: cardImage)
+//                    Image(uiImage: entry.detail.cardImage)
                         .resizable()
                     // ✅ aspectRatio(width: 너비, height: 높이, contentMode: .fill) 코드에서 지정하는 비율과 크기는 contentMode 에 대한 비율과 크기이다.(전체 frame 이 아님. 그래서 추후에 frame 에 대한 코드를 작성해주면 된다.)
                     // 현재 aspect ratio 를 그대로 사용하고 싶다면 contentMode 파라미터만 채워주면 된다.
@@ -74,7 +75,9 @@ struct MyCardEnytryView : View {
             }
             VStack {
                 HStack {
-                    Text(entry.configuration.MyCard?.cardName ?? "✅")
+                    let cardName = cardDetail[1].value(forKey: "cardName") as? String ?? ""
+                    Text(cardName)
+//                    Text(entry.detail.cardName)
                         .font(.system(size: 15))
                         .foregroundColor(.init(white: 1.0, opacity: 0.8))
                         .padding(EdgeInsets(top: 12, leading: 10, bottom: 0, trailing: 0))
@@ -86,7 +89,9 @@ struct MyCardEnytryView : View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Text("userName")
+                    let userName = cardDetail[1].value(forKey: "userName") as? String ?? ""
+                    Text(userName)
+//                    Text(entry.detail.userName)
                         .font(.system(size: 15))
                         .foregroundColor(.userNameColor(for: colorScheme))
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: 11, trailing: 10))
