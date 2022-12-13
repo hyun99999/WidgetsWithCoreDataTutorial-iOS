@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        saveContext()
+        save(cardNameLabel.text, userName: nameLabel.text, image: backgroundImageView.image ?? UIImage())
+        save("두 번째 카드", userName: "두현규", image: UIImage(named: "imgCardWidget") ?? UIImage())
     }
 }
 
@@ -31,26 +32,26 @@ extension ViewController {
     3. NSManagedObject 생성한다.
      4. NSManagedObjectContext 저장해준다.
      */
-    func saveContext() {
+    func save(_ cardName: String?, userName: String?, image: UIImage) {
         // AppDelegate 에서 persistentContainer 를 가져와서 entity 생성.
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let viewContext = appDelegate.persistentContainer.viewContext
+        let viewContext = CoreDataManager.shared.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "CardDetail", in: viewContext)
         
         // NSManagedObject 생성.
         if let entity {
             let card = NSManagedObject(entity: entity, insertInto: viewContext)
-            card.setValue(cardNameLabel.text, forKey: "cardName")
-            card.setValue(nameLabel.text, forKey: "userName")
-            if let image = backgroundImageView.image?.pngData() {
-                card.setValue(image, forKey: "cardImage")
+            card.setValue(cardName, forKey: "cardName")
+            card.setValue(userName, forKey: "userName")
+            if let imageData = image.pngData() {
+                card.setValue(imageData, forKey: "cardImage")
             }
             
             // NSManagedObjectContext 저장.
             do {
                 try viewContext.save()
             } catch {
-                print(error.localizedDescription)
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
