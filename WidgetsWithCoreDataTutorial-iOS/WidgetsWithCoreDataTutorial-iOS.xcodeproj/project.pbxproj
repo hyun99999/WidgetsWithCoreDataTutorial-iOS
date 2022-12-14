@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F843B6B629496564009484C4 /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
 		F8455AEA2934972200737D16 /* QRCodeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8455AE82934971900737D16 /* QRCodeWidget.swift */; };
 		F8455AEC2934973600737D16 /* MyCardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8455AEB2934973600737D16 /* MyCardWidget.swift */; };
 		F8583712292793A300285070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8583711292793A300285070 /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 		F8F1C7422948B2F600BE44D2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F1C73E2948993A00BE44D2 /* CoreDataManager.swift */; };
 		F8F1C7432948E53700BE44D2 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F858371A292793A300285070 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld */; };
 		F8F1C7442948E53900BE44D2 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F858371A292793A300285070 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld */; };
+		F8F1C7472948E8FA00BE44D2 /* MyCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA5238293A309F0015AB8D /* MyCardDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -476,6 +478,7 @@
 				F8F1C73D2948992300BE44D2 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld in Sources */,
 				F862D1212935E63400FB890F /* Color+.swift in Sources */,
 				F8583736292793C100285070 /* WidgetsLiveActivity.swift in Sources */,
+				F8F1C7472948E8FA00BE44D2 /* MyCardDetail.swift in Sources */,
 				F8455AEA2934972200737D16 /* QRCodeWidget.swift in Sources */,
 				F8EA51DC2939B9060015AB8D /* SelectMyCardIntents.intentdefinition in Sources */,
 				F8F1C7402948995B00BE44D2 /* CoreDataManager.swift in Sources */,
@@ -489,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F1C7432948E53700BE44D2 /* WidgetsWithCoreDataTutorial_iOS.xcdatamodeld in Sources */,
+				F843B6B629496564009484C4 /* MyCardDetail.swift in Sources */,
 				F8EA52082939E4430015AB8D /* SelectMyCardIntents.intentdefinition in Sources */,
 				F8F1C7412948B2F600BE44D2 /* CoreDataManager.swift in Sources */,
 				F8EA51EB2939E1620015AB8D /* IntentHandler.swift in Sources */,
