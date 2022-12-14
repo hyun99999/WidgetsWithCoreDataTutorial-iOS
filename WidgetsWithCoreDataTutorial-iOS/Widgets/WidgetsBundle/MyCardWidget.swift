@@ -11,12 +11,21 @@ import Intents
 
 struct MyCardProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> MyCardEntry {
-        // TODO: - 어떤 유형의 컨텐츠를 제공하는지만을 나타내야지 사용자 데이터가 포함되어 있어서는 안된다.
-        MyCardEntry(date: Date(), detail: MyCardDetail.availableMyCards[0])
+        // ✅ CoreData 조회.
+        let cardDetail = CoreDataManager.shared.fetch(entityName: "CardDetail")
+        let myCardDetail = MyCardDetail(cardName: cardDetail[0].value(forKey: "cardName") as? String ?? "",
+                                        userName: cardDetail[0].value(forKey: "userName") as? String ?? "",
+                                        cardImage: UIImage(data: cardDetail[0].value(forKey: "cardImage") as? Data ?? Data()) ?? UIImage())
+        return MyCardEntry(date: Date(), detail: myCardDetail)
     }
     
     func getSnapshot(for configuration: SelectMyCardIntent, in context: Context, completion: @escaping (MyCardEntry) -> ()) {
-        let entry = MyCardEntry(date: Date(), detail: MyCardDetail.availableMyCards[0])
+        // ✅ CoreData 조회.
+        let cardDetail = CoreDataManager.shared.fetch(entityName: "CardDetail")
+        let myCardDetail = MyCardDetail(cardName: cardDetail[0].value(forKey: "cardName") as? String ?? "",
+                                        userName: cardDetail[0].value(forKey: "userName") as? String ?? "",
+                                        cardImage: UIImage(data: cardDetail[0].value(forKey: "cardImage") as? Data ?? Data()) ?? UIImage())
+        let entry = MyCardEntry(date: Date(), detail: myCardDetail)
         completion(entry)
     }
     
@@ -28,11 +37,19 @@ struct MyCardProvider: IntentTimelineProvider {
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             
+            // ✅ CoreData 조회.
+            let cardDetail = CoreDataManager.shared.fetch(entityName: "CardDetail")
+            
+            // ✅ SelectMyCardIntent 에서 전달되는 cardName 을 cardDetail 과 대조해서 동일한 카드를 결정.
             let cardName = configuration.MyCard?.cardName
             
-            MyCardDetail.availableMyCards.forEach { card in
-                if cardName == card.cardName {
-                    let entry = MyCardEntry(date: entryDate, detail: card)
+//            MyCardDetail.availableMyCards.forEach { card in
+            cardDetail.forEach { card in
+                if cardName == card.value(forKey: "cardName") as? String ?? "" {
+                    let myCardDetail = MyCardDetail(cardName: card.value(forKey: "cardName") as? String ?? "",
+                                                    userName: card.value(forKey: "userName") as? String ?? "",
+                                                    cardImage: UIImage(data: card.value(forKey: "cardImage") as? Data ?? Data()) ?? UIImage())
+                    let entry = MyCardEntry(date: entryDate, detail: myCardDetail)
                     entries.append(entry)
                 }
             }
@@ -45,7 +62,6 @@ struct MyCardProvider: IntentTimelineProvider {
 
 struct MyCardEntry: TimelineEntry {
     let date: Date
-    // TODO: - CoreData 를 사용해서 container app 과 데이터 공유.
     let detail: MyCardDetail
 }
 
@@ -53,16 +69,12 @@ struct MyCardEnytryView : View {
     var entry: MyCardProvider.Entry
     @Environment(\.colorScheme) var colorScheme
     
-    let cardDetail = CoreDataManager.shared.fetch(entityName: "CardDetail")
-    
     var body: some View {
         ZStack {
             Color.white
             GeometryReader { proxy in
                 HStack(spacing: 0) {
-                    let cardImage = UIImage(data: cardDetail[1].value(forKey: "cardImage") as? Data ?? Data()) ?? UIImage()
-                    Image(uiImage: cardImage)
-//                    Image(uiImage: entry.detail.cardImage)
+                    Image(uiImage: entry.detail.cardImage)
                         .resizable()
                     // ✅ aspectRatio(width: 너비, height: 높이, contentMode: .fill) 코드에서 지정하는 비율과 크기는 contentMode 에 대한 비율과 크기이다.(전체 frame 이 아님. 그래서 추후에 frame 에 대한 코드를 작성해주면 된다.)
                     // 현재 aspect ratio 를 그대로 사용하고 싶다면 contentMode 파라미터만 채워주면 된다.
@@ -75,9 +87,7 @@ struct MyCardEnytryView : View {
             }
             VStack {
                 HStack {
-                    let cardName = cardDetail[1].value(forKey: "cardName") as? String ?? ""
-                    Text(cardName)
-//                    Text(entry.detail.cardName)
+                    Text(entry.detail.cardName)
                         .font(.system(size: 15))
                         .foregroundColor(.init(white: 1.0, opacity: 0.8))
                         .padding(EdgeInsets(top: 12, leading: 10, bottom: 0, trailing: 0))
@@ -89,9 +99,7 @@ struct MyCardEnytryView : View {
                 Spacer()
                 HStack {
                     Spacer()
-                    let userName = cardDetail[1].value(forKey: "userName") as? String ?? ""
-                    Text(userName)
-//                    Text(entry.detail.userName)
+                    Text(entry.detail.userName)
                         .font(.system(size: 15))
                         .foregroundColor(.userNameColor(for: colorScheme))
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: 11, trailing: 10))
