@@ -41,14 +41,15 @@ struct MyCardProvider: IntentTimelineProvider {
             let cardDetail = CoreDataManager.shared.fetch(entityName: "CardDetail")
             
             // ✅ SelectMyCardIntent 에서 전달되는 cardName 을 cardDetail 과 대조해서 동일한 카드를 결정.
-            let cardName = configuration.MyCard?.cardName
-            
+            let myCardName = configuration.MyCard?.cardName
 //            MyCardDetail.availableMyCards.forEach { card in
             cardDetail.forEach { card in
-                if cardName == card.value(forKey: "cardName") as? String ?? "" {
-                    let myCardDetail = MyCardDetail(cardName: card.value(forKey: "cardName") as? String ?? "",
-                                                    userName: card.value(forKey: "userName") as? String ?? "",
-                                                    cardImage: UIImage(data: card.value(forKey: "cardImage") as? Data ?? Data()) ?? UIImage())
+                guard let cardName = cardDetail[0].value(forKey: "cardName") as? String else { return }
+                
+                if myCardName == cardName {
+                    let myCardDetail = MyCardDetail(cardName: cardName,
+                                                    userName: cardDetail[0].value(forKey: "userName") as? String ?? "",
+                                                    cardImage: UIImage(data: cardDetail[0].value(forKey: "cardImage") as? Data ?? Data()) ?? UIImage())
                     let entry = MyCardEntry(date: entryDate, detail: myCardDetail)
                     entries.append(entry)
                 }
