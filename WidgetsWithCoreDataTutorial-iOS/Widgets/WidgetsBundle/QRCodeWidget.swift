@@ -40,12 +40,20 @@ struct QRCodeEntry: TimelineEntry {
 
 struct QRCodeEntryView : View {
     var entry: QRCodeProvider.Entry
+    @Environment(\.widgetFamily) var widgetFamily
     
     var body: some View {
-        Image("widgetQr")
-            .resizable()
-            .scaledToFill()
-            .widgetURL(URL(string: "openQRCode"))
+        switch widgetFamily {
+        case .accessoryCircular:
+                Image("widgetQr")
+                    .resizable()
+                    .widgetURL(URL(string: "openQRCode"))
+        @unknown default:
+            Image("widgetQr")
+                .resizable()
+                .scaledToFill()
+                .widgetURL(URL(string: "openQRCode"))
+        }
     }
 }
 
@@ -59,7 +67,7 @@ struct QRCodeWidget: Widget {
         }
         .configurationDisplayName("QR Code 위젯")
         .description("QR Code 를 인식할 수 있도록 카메라로 빠르게 접근합니다.")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .accessoryCircular])
     }
 }
 
@@ -67,5 +75,7 @@ struct QRCodeWidget_Previews: PreviewProvider {
     static var previews: some View {
         QRCodeEntryView(entry: QRCodeEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+        QRCodeEntryView(entry: QRCodeEntry(date: Date()))
+            .previewContext(WidgetPreviewContext(family: .accessoryCircular))
     }
 }
