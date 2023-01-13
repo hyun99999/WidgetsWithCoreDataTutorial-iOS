@@ -38,7 +38,7 @@ struct QRCodeEntry: TimelineEntry {
     let date: Date
 }
 
-struct QRCodeEnytryView : View {
+struct QRCodeEntryView : View {
     var entry: QRCodeProvider.Entry
     
     var body: some View {
@@ -55,7 +55,7 @@ struct QRCodeWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind,
                             provider: QRCodeProvider()) { entry in
-            QRCodeEnytryView(entry: entry)
+            QRCodeEntryView(entry: entry)
         }
         .configurationDisplayName("QR Code 위젯")
         .description("QR Code 를 인식할 수 있도록 카메라로 빠르게 접근합니다.")
@@ -65,7 +65,7 @@ struct QRCodeWidget: Widget {
 
 struct QRCodeWidget_Previews: PreviewProvider {
     static var previews: some View {
-        QRCodeEnytryView(entry: QRCodeEntry(date: Date()))
+        QRCodeEntryView(entry: QRCodeEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
