@@ -24,6 +24,7 @@
 		F858373B292793C200285070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F858373A292793C200285070 /* Assets.xcassets */; };
 		F8583741292793C200285070 /* WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F858372C292793C100285070 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F862D1212935E63400FB890F /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2AE0D2935D926000B0043 /* Color+.swift */; };
+		F8DF8459297147EC007BF7D5 /* OpenAppLockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF8458297147EC007BF7D5 /* OpenAppLockScreenWidget.swift */; };
 		F8EA51DC2939B9060015AB8D /* SelectMyCardIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F8EA51DB2939B9060015AB8D /* SelectMyCardIntents.intentdefinition */; };
 		F8EA51E82939E1620015AB8D /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8EA51E72939E1610015AB8D /* Intents.framework */; };
 		F8EA51EB2939E1620015AB8D /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA51EA2939E1620015AB8D /* IntentHandler.swift */; };
@@ -110,6 +111,7 @@
 		F858373A292793C200285070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F858373C292793C200285070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8D2AE0D2935D926000B0043 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		F8DF8458297147EC007BF7D5 /* OpenAppLockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAppLockScreenWidget.swift; sourceTree = "<group>"; };
 		F8EA51DB2939B9060015AB8D /* SelectMyCardIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SelectMyCardIntents.intentdefinition; sourceTree = "<group>"; };
 		F8EA51E62939E1610015AB8D /* IntentsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8EA51E72939E1610015AB8D /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
@@ -168,6 +170,7 @@
 				F8583733292793C100285070 /* WidgetsBundle.swift */,
 				F8455AEB2934973600737D16 /* MyCardWidget.swift */,
 				F8455AE82934971900737D16 /* QRCodeWidget.swift */,
+				F8DF8458297147EC007BF7D5 /* OpenAppLockScreenWidget.swift */,
 			);
 			path = WidgetsBundle;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				F8F1C7472948E8FA00BE44D2 /* MyCardDetail.swift in Sources */,
 				F8455AEA2934972200737D16 /* QRCodeWidget.swift in Sources */,
 				F8EA51DC2939B9060015AB8D /* SelectMyCardIntents.intentdefinition in Sources */,
+				F8DF8459297147EC007BF7D5 /* OpenAppLockScreenWidget.swift in Sources */,
 				F8F1C7402948995B00BE44D2 /* CoreDataManager.swift in Sources */,
 				F8583734292793C100285070 /* WidgetsBundle.swift in Sources */,
 				F8455AEC2934973600737D16 /* MyCardWidget.swift in Sources */,
