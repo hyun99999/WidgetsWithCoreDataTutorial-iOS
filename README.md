@@ -9,3 +9,5 @@
 👉 [iOS) CoreData 를 사용하여 Configurable Widget 만들기 (3/3) - Configurable Widget](https://gyuios.tistory.com/265)
 
 👉 [iOS) 위젯으로 앱의 특정 뷰로 이동(widgetURL)](https://gyuios.tistory.com/261)
+
+👉 [iOS) Lock Screen Widget 만들기](https://gyuios.tistory.com/267)
