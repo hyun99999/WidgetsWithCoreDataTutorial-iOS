@@ -45,9 +45,12 @@ struct QRCodeEntryView : View {
     var body: some View {
         switch widgetFamily {
         case .accessoryCircular:
-                Image("widgetQr")
+            ZStack {
+                AccessoryWidgetBackground()
+                Image("widgetQrLockscreenWhite")
                     .resizable()
                     .widgetURL(URL(string: "openQRCode"))
+            }
         @unknown default:
             Image("widgetQr")
                 .resizable()
